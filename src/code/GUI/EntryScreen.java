@@ -6,7 +6,6 @@ import java.awt.Image;
 import java.awt.MediaTracker;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -34,10 +33,11 @@ public class EntryScreen extends JPanel {
 		password = new JPasswordField("");
 		login = new JButton("Log in");
 
-		login.setBorderPainted(true);
+		
 		Color loginButtonBg = new Color(0, 153, 153);
 		login.setBackground(loginButtonBg);
 		login.setForeground(Color.white);
+		login.setBorderPainted(true);
 
 		// gray #F2F2F2
 //		Color textFieldBg = new Color(243, 243, 243);
@@ -47,16 +47,6 @@ public class EntryScreen extends JPanel {
 
 		userNameLabel.setForeground(Color.blue);
 		passwordLabel.setForeground(Color.blue);
-
-		login.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				JButton b = (JButton) e.getSource();
-				b.setText("Clicked");
-			}
-		});
 
 		this.add(userNameLabel);
 		this.add(username);
@@ -93,19 +83,19 @@ public class EntryScreen extends JPanel {
 			
 			e.printStackTrace();
 		}
+		 
 		containerPic.getGraphics().drawImage(pic, 0, 0, null);
 		this.setSize(376, 682);
 		g.drawImage(containerPic, 0, 0, null);
-//		this.setLayout(null);
-//		userNameLabel.setBounds(130, 400, 100, 15);
 		g.drawString("Enter username: ", 140, 450);
-		//userNameLabel.repaint(130, 440, 100, 15);//paintImmediately(130, 440, 100, 15);//paint(g);
 		username.repaint();
-		//passwordLabel.repaint();
 		g.drawString("Enter password: ", 140, 500);
 		password.repaint();
 		login.repaint();
 	}
+	
+	
+	
 	/**
 	 * Method for checking the details entered by the user.
 	 * @return  true in case of correct details other false.
@@ -122,7 +112,9 @@ public class EntryScreen extends JPanel {
 		}
 	}
 	
-	
+	/**
+	 * Method for updating the screen in a result of wrong login details.
+	 */
 	public void wrongConfirmationResult()
 	{
 		Color backgroundColor=new Color(252,186,186);
