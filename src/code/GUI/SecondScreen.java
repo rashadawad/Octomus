@@ -12,6 +12,10 @@ public class SecondScreen extends JPanel
 {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected Image pic, containerPic;
 	protected MediaTracker tracker;
 

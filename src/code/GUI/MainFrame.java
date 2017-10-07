@@ -2,12 +2,16 @@ package code.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
 
 public class MainFrame extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	protected EntryScreen entryPanel;
 	
@@ -36,7 +40,7 @@ public class MainFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				JButton b=(JButton)e.getSource();
+//				JButton b=(JButton)e.getSource();
 				if(entryPanel.confirmEntry())
 				{
 					moveToSecondScreen();

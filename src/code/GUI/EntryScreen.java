@@ -4,17 +4,19 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.MediaTracker;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 
 public class EntryScreen extends JPanel {
 
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected JLabel userNameLabel;
 	protected JTextField username;
 	protected JLabel passwordLabel;
@@ -102,7 +104,7 @@ public class EntryScreen extends JPanel {
 	 */
 	public boolean confirmEntry()
 	{
-		if(username.getText().equals("octomus") && password.getText().equals("octomus"))
+		if(username.getText().equals("octomus") && password.getPassword().equals("octomus"))
 		{
 			return true;
 		}
