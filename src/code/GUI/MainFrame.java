@@ -38,8 +38,15 @@ public class MainFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				JButton b=(JButton)e.getSource();
-				b.setText("Clicked");
-				moveToSecondScreen();
+				if(entryPanel.confirmEntry())
+				{
+					moveToSecondScreen();
+				}
+				else
+				{
+					entryPanel.wrongConfirmationResult();
+				}
+				
 				
 			}
 
